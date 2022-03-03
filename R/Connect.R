@@ -416,6 +416,7 @@ connect <- function(connectionDetails = NULL,
   if (dbms == "redshift") {
     inform("Connecting using Redshift driver")
     jarPath <- findPathToJar("^RedshiftJDBC.*\\.jar$", pathToDriver)
+    inform(jarPath)
     if (grepl("RedshiftJDBC42", jarPath)) {
       driver <- getJbcDriverSingleton("com.amazon.redshift.jdbc42.Driver", jarPath)
     } else {
